@@ -1,21 +1,18 @@
 # Maya Reynolds, PsyD — Therapy Website
 
-> Professional therapy website for Dr. Maya Reynolds, Licensed Clinical Psychologist based in Santa Monica, California.
-
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel)](https://maya-reynolds-therapy-five.vercel.app)
-[![Next.js](https://img.shields.io/badge/Next.js-16.3.4-black?logo=next.js)](https://nextjs.org)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4-38bdf8?logo=tailwindcss)](https://tailwindcss.com)
+> Professional therapy website for Dr. Maya Reynolds, Licensed Clinical Psychologist in Santa Monica, California.
 
 ---
 
-## 🌐 Live Site
+## 🌐 Live Links
 
-| Environment | URL |
+| | Link |
 |---|---|
-| **Production** | [maya-reynolds-therapy-five.vercel.app](https://maya-reynolds-therapy-five.vercel.app) |
-| **Vercel Dashboard** | [vercel.com/disha-65d5/maya-reynolds-therapy](https://vercel.com/disha-65d5/maya-reynolds-therapy) |
-| **Inspect Last Deployment** | [Deployment Inspector](https://vercel.com/disha-65d5/maya-reynolds-therapy/FRUxmDSCsbErYqrAyyGu8PJo5oRz) |
+| **🚀 Production Site** | **https://maya-reynolds-therapy-five.vercel.app** |
+| **🔍 Vercel Dashboard** | https://vercel.com/disha-65d5/maya-reynolds-therapy |
+| **📦 Last Deployment** | https://vercel.com/disha-65d5/maya-reynolds-therapy/FRUxmDSCsbErYqrAyyGu8PJo5oRz |
+| **🤖 Robots.txt** | https://maya-reynolds-therapy-five.vercel.app/robots.txt |
+| **🗺️ Sitemap** | https://maya-reynolds-therapy-five.vercel.app/sitemap.xml |
 
 ---
 
@@ -23,12 +20,12 @@
 
 A fully static, production-ready therapy practice website built with **Next.js 16 App Router**. Designed to be calm, professional, and accessible — matching the tone of a private clinical psychology practice.
 
-### Pages & Sections
+### Sections
 - **Hero** — Headline, CTA, hero image with floating quote card
 - **Who I Work With** — Description of ideal clients
 - **Services** — Anxiety & Panic · Trauma & EMDR · Burnout & Perfectionism
 - **How I Work** — Therapeutic approach and methods
-- **Our Office** — Location info, in-person + telehealth details, dual office photos
+- **Our Office** — Location, in-person + telehealth details, dual office photos
 - **About Dr. Maya** — Bio, portrait, therapy modality tags
 - **FAQ** — Accessible accordion (`<details>` / `<summary>`)
 - **Contact CTA** — Book an appointment section
@@ -49,9 +46,9 @@ A fully static, production-ready therapy practice website built with **Next.js 1
 
 ---
 
-## 🔒 Security
+## 🔒 Security Headers
 
-HTTP security headers configured in [`next.config.ts`](./next.config.ts) and applied to every route:
+Configured in `next.config.ts` and applied to every route:
 
 | Header | Value |
 |---|---|
@@ -60,46 +57,17 @@ HTTP security headers configured in [`next.config.ts`](./next.config.ts) and app
 | `Strict-Transport-Security` | `max-age=63072000; includeSubDomains; preload` |
 | `Referrer-Policy` | `strict-origin-when-cross-origin` |
 | `Permissions-Policy` | `camera=(), microphone=(), geolocation=()` |
-| `Content-Security-Policy` | Restricts scripts, styles, fonts, images to trusted origins |
+| `Content-Security-Policy` | Scripts, styles, fonts, images restricted to trusted origins |
 
 ---
 
 ## 🔍 SEO
 
-- **Title & description** — Per-page metadata via Next.js `Metadata` API
-- **Open Graph** — Title, description, image for social sharing
-- **Twitter Card** — `summary_large_image` format
-- **Robots** — Auto-generated at `/robots.txt` via `app/robots.ts`
-- **Sitemap** — Auto-generated at `/sitemap.xml` via `app/sitemap.ts`
-- **Structured Data** — `LocalBusiness` + `Person` JSON-LD schema for Google rich results
-- **Semantic HTML** — `<header>`, `<main>`, `<nav>`, `<section>`, `<article>`, `<address>`, `<footer>`
-
----
-
-## ♿ Accessibility
-
-- All images have descriptive `alt` text, explicit `width` / `height`, and `loading` attributes
-- Interactive elements have `aria-label`, `aria-expanded`, `aria-controls`
-- Mobile menu toggle is fully keyboard accessible
-- FAQ accordion uses native `<details>` / `<summary>` (no JavaScript required)
-- Smooth scroll via `scroll-behavior: smooth` in CSS
-- Colour contrast ratios meet WCAG AA
-
----
-
-## 🚀 Getting Started (Local Development)
-
-```bash
-# Install dependencies
-npm install
-
-# Start the dev server
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-The main page is [`app/page.tsx`](./app/page.tsx) — the browser hot-reloads on every save.
+- Full title, description, Open Graph, and Twitter Card metadata
+- `/robots.txt` → https://maya-reynolds-therapy-five.vercel.app/robots.txt
+- `/sitemap.xml` → https://maya-reynolds-therapy-five.vercel.app/sitemap.xml
+- `LocalBusiness` + `Person` JSON-LD schema for Google rich results
+- Semantic HTML throughout (`<header>`, `<main>`, `<nav>`, `<section>`, `<article>`, `<address>`, `<footer>`)
 
 ---
 
@@ -125,42 +93,50 @@ maya-reynolds-therapy/
 
 ---
 
-## 📦 Build & Deploy
+## 🚀 Local Development
 
-### Production Build (local verification)
 ```bash
-npm run build
+npm install
+npm run dev
 ```
 
-Expected output:
+Open http://localhost:3000 in your browser.
+
+---
+
+## 📦 Build & Deploy
+
+```bash
+# Verify production build locally
+npm run build
+
+# Deploy to Vercel production
+vercel --prod
+```
+
+All 4 routes are fully **static** — served from Vercel's global Edge Network with zero cold starts.
+
 ```
 Route (app)
 ┌ ○ /
 ├ ○ /_not-found
 ├ ○ /robots.txt
 └ ○ /sitemap.xml
-
-○  (Static)  prerendered as static content
 ```
-
-### Deploy to Vercel
-```bash
-vercel --prod
-```
-
-All routes are fully **static** — served instantly from Vercel's global Edge Network with zero cold starts.
 
 ---
 
 ## ✅ Pre-Launch Checklist
 
-Before pointing a real domain to this project, update the following placeholders:
+Before pointing a real custom domain to this project:
 
-- [ ] Replace `https://mayareynoldspsyd.com` with the real domain in [`app/layout.tsx`](./app/layout.tsx) and [`app/sitemap.ts`](./app/sitemap.ts)
-- [ ] Replace `maya@mayareynoldspsyd.com` with the real contact email in [`app/page.tsx`](./app/page.tsx)
-- [ ] Replace `123th Street 45 W` with the real office address in [`app/page.tsx`](./app/page.tsx)
-- [ ] Add the real domain in Vercel Dashboard → Settings → Domains
-- [ ] Submit sitemap to [Google Search Console](https://search.google.com/search-console)
+- [ ] Update canonical domain — replace `https://mayareynoldspsyd.com` in:
+  - `app/layout.tsx` (metadataBase + OG URLs)
+  - `app/sitemap.ts` (sitemap URL)
+- [ ] Update contact email — replace `maya@mayareynoldspsyd.com` in `app/page.tsx`
+- [ ] Update office address — replace `123th Street 45 W` in `app/page.tsx` (Office section + Footer)
+- [ ] Add custom domain → https://vercel.com/disha-65d5/maya-reynolds-therapy/settings/domains
+- [ ] Submit sitemap to Google Search Console → https://search.google.com/search-console
 
 ---
 
