@@ -9,6 +9,7 @@
 | | Link |
 |---|---|
 | **🚀 Production Site** | **https://maya-reynolds-therapy-five.vercel.app** |
+| **💻 GitHub Repo** | https://github.com/dishaML/maya-reynolds-therapy |
 | **🔍 Vercel Dashboard** | https://vercel.com/disha-65d5/maya-reynolds-therapy |
 | **📦 Last Deployment** | https://vercel.com/disha-65d5/maya-reynolds-therapy/FRUxmDSCsbErYqrAyyGu8PJo5oRz |
 | **🤖 Robots.txt** | https://maya-reynolds-therapy-five.vercel.app/robots.txt |
